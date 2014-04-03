@@ -14,6 +14,7 @@ gem 'bootstrap-will_paginate', '0.0.9'
 gem 'pry', '0.9.12.6'
 gem 'pry-debugger', '0.2.2'
 gem 'cloudinary', '1.0.70'
+gem 'devise', '3.2.4'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
