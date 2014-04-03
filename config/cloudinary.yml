@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: seveneightninea
+  api_key: '362891614487983'
+  api_secret: L1nVqMMX5UwIMOiMv5IiZkToDmw
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: seveneightninea
+  api_key: '362891614487983'
+  api_secret: L1nVqMMX5UwIMOiMv5IiZkToDmw
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: seveneightninea
+  api_key: '362891614487983'
+  api_secret: L1nVqMMX5UwIMOiMv5IiZkToDmw
+  enhance_image_tag: true
+  static_image_support: false

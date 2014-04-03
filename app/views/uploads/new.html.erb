@@ -3,8 +3,11 @@
     <section>  
       <%= form_for(@upload) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
+
+        <%= @postupload = Cloudinary::Uploader.upload('/Users/nicholaslau/Desktop/test.jpg') %>
+
         <%= f.label :link %>
-        <%= f.text_field :link %>
+        <%= f.text_field :link, @postupload[:url] %>
 
         <%= f.label :sepia %>
         <%= f.select :sepia, options_for_select([["False", false], ["True", true]], @upload.sepia) %>
