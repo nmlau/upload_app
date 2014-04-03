@@ -1,0 +1,24 @@
+<h1>Update your upload</h1>
+
+<div class="row">
+  <aside class="span6 offset3">
+    <section>  
+      <%= form_for(@upload) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <%= f.label :link %>
+        <%= f.text_field :link %>
+
+        <%= f.label :sepia %>
+        <%= f.select :sepia, options_for_select([["False", false], ["True", true]], @upload.sepia) %>
+
+        <%= f.label :watermark %>
+        <%= f.select :watermark, options_for_select([["False", false], ["True", true]], @upload.watermark) %>
+
+        <%= f.label :vertflip %>
+        <%= f.select :vertflip, options_for_select([["False", false], ["True", true]], @upload.vertflip) %>
+
+        <%= f.submit "Save Changes", class: "btn btn-large btn-primary" %>
+      <% end %>
+    </section>
+  </div>
+</div>
