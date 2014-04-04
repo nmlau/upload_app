@@ -1,0 +1,63 @@
+<div class="photos">
+  <%= link_to "Upload Photo", new_photo_path %>
+  <% if @photos.empty? %>
+    <p>No photos were added yet.</p>
+  <% end %>
+
+  <% thumbs_params = { :format => "jpg", :height => 150, :width => 150, :class => "thumbnail inline" } %>
+  <% @photos.each do |photo| %>
+    <div class="photo">
+      <h2><%= photo.title %></h2>
+      <a href="<%= photo.image.url %>" target="_blank">
+        <%= image_tag(photo.image.thumbnail.url, :class => "thumbnail inline") %>
+      </a>
+      <div>
+        <%= link_to "edit", edit_photo_path(photo) %> |
+          <%= link_to "delete", photo_path(photo), method: :delete%>
+      </div>
+      
+      <div class="less_info">
+        <a href="#" class="toggle_info">Show transformations</a>
+      </div>
+      
+      <div class="more_info">
+        <a href="#" class="toggle_info">Hide transformations</a>
+        <table class="thumbnails">
+          <% transformations = [
+              { :crop => "fill", :radius => 10, :height => 150, :width => 150 },
+              { :crop => "scale", :height => 150, :width => 150 },
+              { :crop => "fit", :height => 150, :width => 150 },
+              { :crop => "thumb", :gravity => "face", :height => 150, :width => 150 },
+              { :format => "png", :angle => 20, :transformation => { 
+                :crop => "fill", :gravity => "north", :effect => "sepia", :height => 150, :width => 150 } }
+            ] %>
+          <% transformations.each do |image_params| %>
+            <td>
+              <div class="thumbnail_holder">
+                <a target="_blank" href="<%= cloudinary_url(photo.image, image_params.dup) %>" > 
+                  <%= cl_image_tag(photo.image, image_params.merge(:class => "thumbnail inline")) %>
+                </a>
+              </div>
+              <table class="info">
+                <% image_params.each_pair do |key, value| %>
+                  <tr>
+                    <td><%= key %></td>
+                    <td><%= value.to_json %></td>
+                  </tr>
+                <% end %>  
+              </table>
+              <br/>
+            </td>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<script type='text/javascript'>
+  $('.toggle_info').click(function () {
+    $(this).closest('.photo').toggleClass('show_more_info');
+    return false;
+  });
+</script>

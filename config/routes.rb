@@ -2,6 +2,8 @@ UploadApp::Application.routes.draw do
   
   devise_for :users
   resources :uploads#, only: [:index:create, :destroy]
+  resources :photos#, :only => [:index, :new, :create, :edit, :update]
+
 
   root  'static_pages#home'
   match 'home', to: 'static_pages#home',   via: 'get'

@@ -244,3 +244,6 @@ aside {
     margin-bottom: 5px;
   }
 }
+
+.more_info, .show_more_info .less_info { display: none; }
+.show_more_info .more_info, .less_info { display: inline-block; }

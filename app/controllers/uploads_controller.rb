@@ -34,7 +34,7 @@ def update
 end
 
 def destroy
-  @micropost.destroy
+  @upload.destroy
   redirect_to root_url
 end
 
