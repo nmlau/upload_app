@@ -16,6 +16,7 @@ gem 'pry-debugger', '0.2.2'
 gem 'carrierwave', '0.10.0'
 gem 'cloudinary', '1.0.70'
 gem 'devise', '3.2.4'
+gem 'newrelic_rpm', '3.7.3.204'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
