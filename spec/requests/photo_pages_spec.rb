@@ -11,3 +11,6 @@
 
 # As a logged-in user on the image gallery index, I can click edit next to a picture so that I can
 # apply a few basic image manipulation functions from Cloudinary.
+
+#to do the edit story
+#http://cloudinary.com/documentation/rails_carrierwave
