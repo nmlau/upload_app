@@ -40,6 +40,13 @@ describe "Static pages" do
     it_should_behave_like "all static pages"
   end
 
+  describe "signin page" do
+    before { visit new_user_session_path }
+
+    it { should have_content('Sign in') }
+    it { should have_selector('h2', "text: Sign in") }
+  end
+
   it "should have the right links on the layout" do
     visit root_path
     click_link "About"
