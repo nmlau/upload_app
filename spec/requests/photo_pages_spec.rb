@@ -73,6 +73,5 @@ describe "Photo pages" do
   end
 
 
-
   Warden.test_reset! 
 end
