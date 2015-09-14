@@ -11,8 +11,8 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
 #extension to sample_app
-gem 'pry', '0.9.12.6'
-gem 'pry-debugger', '0.2.2'
+# gem 'pry', '0.9.12.6'
+# gem 'pry-debugger', '0.2.2'
 gem 'carrierwave', '0.10.0'
 gem 'cloudinary', '1.0.70'
 gem 'devise', '3.2.4'
